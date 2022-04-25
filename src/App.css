@@ -1,0 +1,283 @@
+.App{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* GLOBAL TAGS */
+.fas, p, li{ color: rgb(7,67,114); }
+button{ cursor: pointer; }
+li{ list-style-type: none; }
+label {color: aliceblue; }
+
+/* SELECT STYLING */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+}
+.custom-select{
+  font-size: 14px;
+  margin: 0 12px;
+  position: relative;
+}
+.custom-select::before{
+  content: "\f13a";
+  transform: scale(0.7);
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+.custom-select::after{
+  transform: rotate(30deg);
+}
+.custom-select select {
+  background-color: #2b91e4;
+  border: 2px solid #60b1f3;
+  color: aliceblue;
+  padding: 12px;
+  width: 100px; 
+  font-size: 0.7rem;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+.custom-select:hover::before {
+  color: rgba(255, 255, 255, 0.7);
+  transform: rotate(90deg) scale(0.7);
+}
+
+.custom-select select option {
+  padding: 30px;
+}
+#Settings{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+#Themes > h1{
+  margin-left: 30px;
+}
+.title-wrapper{
+  line-height: 0.1;
+  margin-bottom: 30px;
+}
+#title{ 
+  margin-left: 30px; 
+  font-size: 2.7rem;
+}
+.title, .divider, .author, .frame{
+  display: inline-block;
+  color: aliceblue;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.frame {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgb(81, 180, 245);
+  border-radius: 50%;
+  background: #eee;
+  margin: auto;
+}
+.prof {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: crosshair;
+}
+#menu{
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#nav-menu{
+  display: flex;
+  justify-content: space-around;
+}
+#nav-menu div{
+  background:rgb(158, 146, 146);
+  padding: 5px 12px;
+  margin-bottom: 20px;
+  border-radius: 30%;
+  border: 2px solid rgb(189, 173, 173);
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.748);
+}
+#nav-menu ul{
+  margin-right: 30px;
+}
+#nav-menu > ul, #nav-menu li, select  {
+  cursor: pointer;
+}
+#nav-menu li { margin: 4px; }
+#nav-menu a{ 
+  color: rgb(212, 235, 250); 
+  text-decoration: none;
+}
+#nav-menu a:hover{
+  color: rgb(204, 230, 40);
+  cursor: pointer;
+}
+.cv{
+  cursor: crosshair;
+  box-shadow: 2px 2px 8px 0 rgba(56, 56, 56, 0.699);
+}
+
+/*** Instructions Wrapper ***/
+#instructions-wrapper{
+  display: inline-block;
+  text-align: center;
+  border-top: 4px solid rgb(116, 184, 243);
+  border-left: 4px solid rgb(116, 184, 243);
+  border-right: 3px solid rgb(35, 98, 153);
+  border-bottom: 3px solid rgb(35, 98, 153);
+  background: rgb(96, 171, 236);
+  width: max-content;
+  height: max-content;
+  padding: 13px;
+  margin-right: 38px;
+}
+#instructions-wrapper > span{
+  color: rgb(7,67,114);
+  font-weight: 4;
+  text-align: center;
+  font-size: 2em;
+}
+
+/*** Upper Container ***/ 
+#upper-container{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  margin-bottom: 20px;
+}
+
+/*** Return to Menu SECTION ***/
+#Return{
+  margin: 22px;
+  color: rgb(7,67,114);
+  cursor: pointer;
+  font-size: clamp(0.8rem, 1.2vw, 2rem);
+}
+#Return > i {
+  margin-right: 10px
+}
+#Return:hover{
+  text-decoration: underline;
+}
+
+/*** Buttons in upper section ***/
+#upper-button-container{
+  display: flex;
+  flex-flow: row;
+  margin: 0 6px;
+  margin-bottom: 10px;
+}
+#upper-button-container > button{
+  border-top: 4px solid rgb(116, 184, 243);
+  border-left: 4px solid rgb(116, 184, 243);
+  border-right: 3px solid rgb(35, 98, 153);
+  border-bottom: 3px solid rgb(35, 98, 153);
+  padding: 14px 10px;
+  background: rgb(14, 74, 121);
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  transform: translateX(0px);
+}
+#upper-button-container > button:hover{
+  transform: translateY(10px);
+}
+#upper-button-container .fas{
+  color: rgb(131, 182, 226);
+}
+.button-container > div{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+/*** Battle Section ***/
+#main-battle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 24px 0;
+}
+.display-turn{
+  align-self: center;
+  animation: alive 1s infinite;
+  margin-bottom: 30px;
+  width: 200px;
+  text-align: center;
+  font-size: clamp(0.7rem, 1.6vw, 2.2rem);
+}
+@keyframes alive{
+  50%{
+    transform: scale(1.5);
+  }
+}
+.base-container{
+  display: flex;
+  flex-direction: row;
+}
+
+/*** Player ships status ***/
+.player-resource-container{
+  margin: 0 25px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.player-resources-container > p, .player-resources > p{
+  font-size: clamp(0.7rem, 1.5vw, 2rem);
+}
+
+/***BUTTON CONTAINERS***/
+.in-game-btn{
+  border: 2px outset rgb(116, 184, 243);
+  color: aliceblue;
+  background: rgb(60, 126, 184);
+} 
+.in-game-btn:hover{
+  background: rgb(66, 152, 226);
+  border: 3px inset rgb(144, 199, 247);
+}
+
+/***OUTCOMES SECTION***/
+#Outcomes{
+  height: 20vh;
+}
+
+
+/*** MEDIA QUERIES***/
+.mobile-display-turn{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: clamp(0.6rem, 1.1vw, 2rem);
+}
+@media ( max-width: 499px ){
+  .button-container > div > button{
+    display: flex;
+    flex-flow: column;
+  }
+  #main-battle{
+    flex-direction: column;
+    align-items: center;
+  }
+  #outcome-visibility-button, .display-turn, .display-victory{
+    display: none;
+  }
+}
+@media ( min-width: 500px) {
+  .mobile-display-turn, .mobile-display-victory{
+    display: none;
+  }
+}
