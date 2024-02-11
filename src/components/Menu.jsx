@@ -44,7 +44,7 @@ function Home({ setGamemode, gamemode, difficulty, setDifficulty }) {
     useEffect(() => {
         const img = document.getElementById('prf');
         img.onclick = () => {
-            window.location.href = 'https://github.com/bvrbryn445s';
+            window.location.href = 'https://github.com/bbntpl';
         }
     })
     useEffect(() => {
